@@ -1,0 +1,8 @@
+Revision history for Mac::Apps::Seasonality::Constants.
+
+0.0.3  Fri Nov  3 07:41:36 CST 2006
+    Break out from the Mac::Apps:Seasonality::LoadICAOHistory distribution so
+    that it can be updated independently.
+
+0.0.4  Mon Jan 15 17:14:22 CST 2007
+    Code cleanup.  First CPAN upload.

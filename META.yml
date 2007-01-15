@@ -1,0 +1,36 @@
+---
+name: Mac-Apps-Seasonality-Constants
+version: v0.0.4
+author:
+  - 'Elliot Shank <perl@galumph.com>'
+abstract: Define various constants relating to Seasonality (http://gauchosoft.com/Software/Seasonality/).
+license: perl
+resources:
+  license: http://dev.perl.org/licenses/
+requires:
+  Readonly: 0
+  Regexp::Common: 0
+  perl: 5.8.6
+  version: 0
+build_requires:
+  Test::More: 0
+  version: 0
+recommends:
+  File::Find::Rule: 0
+  File::Slurp: 0
+  Perl::Critic: 0
+  Pod::Coverage::CountParents: 0
+  Test::Distribution: 0
+  Test::Perl::Critic: 0
+  Test::Pod: 0
+  Test::Pod::Coverage: 0
+  Test::Spelling: 0
+dynamic_config: 1
+provides:
+  Mac::Apps::Seasonality::Constants:
+    file: lib/Mac/Apps/Seasonality/Constants.pm
+    version: v0.0.4
+generated_by: Module::Build version 0.2806
+meta-spec:
+  url: http://module-build.sourceforge.net/META-spec-v1.2.html
+  version: 1.2
