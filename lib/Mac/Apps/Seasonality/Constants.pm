@@ -5,7 +5,7 @@ use 5.008006;
 use strict;
 use warnings;
 
-use version; our $VERSION = qv('0.0.4');
+use version; our $VERSION = qv('1.0.0');
 
 use Exporter qw( import );
 
@@ -179,7 +179,7 @@ Mac::Apps::Seasonality::Constants - Static definitions of aspects of Seasonality
 
 =head1 VERSION
 
-This document describes Mac::Apps::Seasonality::Constants version 0.0.3.
+This document describes Mac::Apps::Seasonality::Constants version 1.0.0.
 
 
 =head1 SYNOPSIS

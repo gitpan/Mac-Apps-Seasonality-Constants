@@ -1,6 +1,6 @@
 ---
 name: Mac-Apps-Seasonality-Constants
-version: v0.0.4
+version: 1.0.0
 author:
   - 'Elliot Shank <perl@galumph.com>'
 abstract: Define various constants relating to Seasonality (http://gauchosoft.com/Software/Seasonality/).
@@ -29,8 +29,8 @@ dynamic_config: 1
 provides:
   Mac::Apps::Seasonality::Constants:
     file: lib/Mac/Apps/Seasonality/Constants.pm
-    version: v0.0.4
-generated_by: Module::Build version 0.2806
+    version: 1.0.0
+generated_by: Module::Build version 0.2808
 meta-spec:
   url: http://module-build.sourceforge.net/META-spec-v1.2.html
   version: 1.2
