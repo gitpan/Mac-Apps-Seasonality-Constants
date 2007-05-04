@@ -5,7 +5,7 @@ use 5.008006;
 use strict;
 use warnings;
 
-use version; our $VERSION = qv('1.0.0');
+use version; our $VERSION = qv('v1.0.1');
 
 use Exporter qw( import );
 
@@ -179,7 +179,7 @@ Mac::Apps::Seasonality::Constants - Static definitions of aspects of Seasonality
 
 =head1 VERSION
 
-This document describes Mac::Apps::Seasonality::Constants version 1.0.0.
+This document describes Mac::Apps::Seasonality::Constants version 1.0.1.
 
 
 =head1 SYNOPSIS
@@ -221,7 +221,6 @@ This document describes Mac::Apps::Seasonality::Constants version 1.0.0.
     use Mac::Apps::Seasonality::Constants qw{ :application };
     use Mac::Apps::Seasonality::Constants qw{ :database };
     use Mac::Apps::Seasonality::Constants qw{ :data };
-    use Mac::Apps::Seasonality::Constants qw{ :growl };
 
 
 =head1 DESCRIPTION
@@ -252,10 +251,6 @@ The database table and column names.
 =item C<:data>
 
 The missing data indicator value and the limits on each type of data.
-
-=item C<:growl>
-
-The values to be used in talking to Growl.
 
 =back
 
@@ -393,41 +388,6 @@ The range of valid atmospheric pressures, in millibars/heptopascals.
 =back
 
 
-=head2 Growl
-
-=over
-
-=item C<$GROWL_APPLICATION_NAME>
-
-The name used to register with Growl.
-
-=item C<$GROWL_NOTIFICATION_PROGRESS>
-
-The notification type used for messages describing the progress of loading
-data.
-
-=item C<$GROWL_NOTIFICATION_SEASONALITY_APPLICATION_STATUS>
-
-The notification type used for messages describing the status of Seasonality
-itself.
-
-=item C<$GROWL_NOTIFICATION_ERROR>
-
-The notification type used for messages describing the problems with loading
-data.
-
-=item C<$GROWL_NOTIFICATIONS_REF>
-
-The array of the above notification types.
-
-=item C<$GROWL_APPLICATION_ICON>
-
-The identifier of the icon for Growl to use while displaying messages.
-
-
-=back
-
-
 =head1 DIAGNOSTICS
 
 None, since there's no subroutines in this module.
@@ -441,7 +401,7 @@ environment variables.
 
 =head1 DEPENDENCIES
 
-None.
+L<Readonly>
 
 
 =head1 INCOMPATIBILITIES

@@ -1,5 +1,8 @@
 Revision history for Mac::Apps::Seasonality::Constants.
 
+1.0.1  Fri May  4 10:01:19 CDT 2007
+       Remove documentation for no longer extant values.
+
 1.0.0  Fri May  4 06:17:42 CDT 2007
        Cleanup tests, including dealing with current Perl::Critic.
 
