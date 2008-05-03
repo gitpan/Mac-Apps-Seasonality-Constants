@@ -5,7 +5,7 @@ use 5.008006;
 use strict;
 use warnings;
 
-use version; our $VERSION = qv('v1.0.1');
+use version; our $VERSION = qv('v1.0.2');
 
 use Exporter qw( import );
 
@@ -16,8 +16,10 @@ use Readonly;
 Readonly our $SEASONALITY_NAME                  => 'Seasonality';
 Readonly our $SEASONALITY_CREATOR               => 'GSSE';
 Readonly our $SEASONALITY_HISTORY_DATABASE_NAME => 'weather.db';
+## no critic (ValuesAndExpressions::RestrictLongStrings)
 Readonly our $SEASONALITY_HISTORY_DATABASE_PATH =>
     "$ENV{HOME}/Library/Application Support/$SEASONALITY_NAME/$SEASONALITY_HISTORY_DATABASE_NAME";
+## use critic
 
 # Database tables.
 Readonly our $SEASONALITY_HISTORY_TABLE         => 'icao_history';
@@ -172,6 +174,8 @@ __END__
 
 =encoding utf8
 
+=for stopwords metadata SQLite ICAO ICAOs humidities
+
 =head1 NAME
 
 Mac::Apps::Seasonality::Constants - Static definitions of aspects of Seasonality.
@@ -179,7 +183,7 @@ Mac::Apps::Seasonality::Constants - Static definitions of aspects of Seasonality
 
 =head1 VERSION
 
-This document describes Mac::Apps::Seasonality::Constants version 1.0.1.
+This document describes Mac::Apps::Seasonality::Constants version 1.0.2.
 
 
 =head1 SYNOPSIS
@@ -269,7 +273,7 @@ this in case it needs to be enhanced/changed in the future.
 
 =item C<$SEASONALITY_CREATOR>
 
-The MacOS creator code for the application.
+The Mac OS creator code for the application.
 
 
 =back
@@ -282,7 +286,7 @@ The MacOS creator code for the application.
 =item C<$SEASONALITY_HISTORY_DATABASE_NAME>
 
 The name of the SQLite database file that the historical data is stored in.
-Note that this is just the basename, and does not contain any path components.
+Note that this is just the base name, and does not contain any path components.
 
 =item C<$SEASONALITY_HISTORY_DATABASE_PATH>
 
@@ -385,6 +389,11 @@ The range of valid visibilities, in miles.
 The range of valid atmospheric pressures, in millibars/heptopascals.
 
 
+=item C<$SEASONALITY_RELATIVE_HUMIDITY_MINIMUM>, C<$SEASONALITY_RELATIVE_HUMIDITY_MAXIMUM>
+
+The range of valid humidities, in percentages.
+
+
 =back
 
 
@@ -425,7 +434,7 @@ Elliot Shank  C<< perl@galumph.com >>
 
 =head1 LICENSE AND COPYRIGHT
 
-Copyright ©2006-2007, Elliot Shank C<< perl@galumph.com >>. All rights
+Copyright ©2006-2008, Elliot Shank C<< perl@galumph.com >>. All rights
 reserved.
 
 This module is free software; you can redistribute it and/or

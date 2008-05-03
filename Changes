@@ -1,14 +1,17 @@
 Revision history for Mac::Apps::Seasonality::Constants.
 
-1.0.1  Fri May  4 10:01:19 CDT 2007
+1.0.2  2008-05-03
+       Playing the kwalitee game.
+
+1.0.1  2007-05-04
        Remove documentation for no longer extant values.
 
-1.0.0  Fri May  4 06:17:42 CDT 2007
+1.0.0  2007-05-04
        Cleanup tests, including dealing with current Perl::Critic.
 
-0.0.4  Mon Jan 15 17:14:22 CST 2007
+0.0.4  2007-01-15
        Code cleanup.  First CPAN upload.
 
-0.0.3  Fri Nov  3 07:41:36 CST 2006
+0.0.3  2007-11-03
        Break out from the Mac::Apps:Seasonality::LoadICAOHistory distribution
        so that it can be updated independently.

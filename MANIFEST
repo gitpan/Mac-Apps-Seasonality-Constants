@@ -1,7 +1,7 @@
 Build.PL
 Changes
 lib/Mac/Apps/Seasonality/Constants.pm
-MANIFEST                        This list of files
+MANIFEST			This list of files
 META.yml
 README
 t/author/consistent_version_numbers.t
@@ -14,3 +14,4 @@ t/author/pod_coverage.t
 t/author/pod_spelling.t
 t/author/pod_syntax.t
 t/author/README
+t/use_ok.t

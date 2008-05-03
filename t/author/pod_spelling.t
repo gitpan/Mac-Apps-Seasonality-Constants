@@ -18,6 +18,7 @@ et
 cetera
 CSV
 DBI
+humidities
 ICAO
 ICAOs
 RaiseError

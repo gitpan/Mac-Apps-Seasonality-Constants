@@ -1,3 +1,4 @@
+use 5.008006;
 use strict;
 use warnings;
 
@@ -14,10 +15,20 @@ $class = Module::Build->subclass( code => <<'SUBCLASS' );
     sub ACTION_authortest {
         my $self = shift;
 
-        $self->dispatch('build');
+        $self->depends_on('build');
+        $self->depends_on('manifest');
+        $self->depends_on('distmeta');
         $self->recursive_test_files(1);
-        $self->dispatch('test');
+        $self->depends_on('test');
     } # end ACTION_authortest()
+
+    sub ACTION_distdir {
+        my $self = shift;
+
+        $self->depends_on('authortest');
+
+        $self->SUPER::ACTION_distdir;
+    } # end ACTION_distdir
 
 SUBCLASS
 
@@ -29,33 +40,29 @@ $builder = $class->new(
         "Define various constants relating to Seasonality (http://gauchosoft.com/Software/Seasonality/).",
     dynamic_config  => 1,
     build_requires  => {
-        'version'           => 0,
         'Test::More'        => 0,
     },
     requires        => {
-        'perl'              => '5.8.6',
-        'version'           => 0,
-        'Readonly'          => 0,
-        'Regexp::Common'    => 0,
-    },
-    recommends      => {
-        'File::Find::Rule'              => 0,
-        'File::Slurp'                   => 0,
-        'Perl::Critic'                  => 0,
-        'Pod::Coverage::CountParents'   => 0,
-        'Test::Distribution'            => 0,
-        'Test::Perl::Critic'            => 0,
-        'Test::Pod'                     => 0,
-        'Test::Pod::Coverage'           => 0,
-        'Test::Spelling'                => 0,
+        'version'   => 0,
+        'strict'    => 0,
+        'warnings'  => 0,
+        'utf8'      => 0,
+        'Exporter'  => 0,
+        'Env'       => 0,
+        'Readonly'  => 0,
     },
     script_files    => [ glob('script/*') ],
     create_packlist => 1,
     sign            => 0,
     add_to_cleanup  => [
-        'Mac-Apps-Seasonality-Constants-*',
-        '*.vim_backup',
-        'pod2htm?.tmp',
+        qw{
+            MANIFEST
+            MANIFEST.bak
+            META.yml
+            Mac-Apps-Seasonality-Constants-*
+            *.vim_backup
+            pod2htm?.tmp
+        }
     ],
 );
 
